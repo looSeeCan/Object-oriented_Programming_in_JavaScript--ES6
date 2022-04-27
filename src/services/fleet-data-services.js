@@ -8,9 +8,10 @@ export class FleetDataService {
     };
 
     loadData(fleet) {
-        for(let data of fleet) {//data becomes an instance of fleet. it inherits its properties. the for of loop loops thru all the indexes of the fleet array, which is an object
+        for(let data of fleet) {//data becomes an instance of fleet. it inherits its properties. the for of loop loops thru all the indexes of the fleet array of objects,
             switch(data.type) {//if the data type of each object
                 case "car"://is a car then
+                    let car = loadCar(data);
                     this.cars.push(data);//it pushes the object that is a car, into the cars array, in the constructor above
                     break;
                 case "drone"://is a drone

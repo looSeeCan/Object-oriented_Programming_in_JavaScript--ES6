@@ -5,8 +5,11 @@ import {FleetDataService} from "./services/fleet-data-services.js";
 
 
 console.table(fleet);
+
 let dataService = new FleetDataService();
 console.log("data service:", dataService);//this new dataservice is an object with empty arrays
 dataService.loadData(fleet);//calls the loadData method in the class FleetDataService. Passes fleet as an argument. This method fills the arrays with the specified values
+
 console.table(dataService.cars);
 console.table(dataService.drones);
+// console.trace(dataService.drones);
