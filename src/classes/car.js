@@ -2,11 +2,11 @@ import { Vehicle } from "./vehicle.js";//autocomplete left the .js out of this f
 
 
 export class Car extends Vehicle {
-    constructor() {
-        super(license, model, lotLong);
-        this.miles = miles;
-        this.make = null;
-        this.model = null;
+    constructor(license, model, latLong) {
+        super(license, model, latLong);//when the car is being instantiated, this super will call the parent class first, which is the Vehicle class
+        this.miles = null;
+        this.make = null;//why do these have to be set to null?
+        
     };
 
 };
