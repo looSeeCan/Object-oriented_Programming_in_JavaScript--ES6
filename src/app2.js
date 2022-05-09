@@ -3,7 +3,7 @@ import {Drone} from "./classes/drone.js";
 import {fleet} from "./fleet-data.js";//fleet is not capitalized, because it is not a class. Its just an object literal, which is an array of objects
 import {FleetDataService} from "./services/fleet-data-services.js";
 
-// debugger;
+debugger;
 console.table(fleet);
 
 let dataService = new FleetDataService();//calls the FleetDataService class, which builds an empty object with the specified arrays
@@ -18,4 +18,4 @@ dataService.loadData(fleet);//calls the loadData method in the class FleetDataSe
 
 console.table(dataService.errors);
 for (let e of dataService.errors)
-    console.log(e.message, e.data.type)
+    console.log(`message: ${e.message}: ${e.data.type}`);
