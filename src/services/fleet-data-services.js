@@ -9,6 +9,20 @@ export class FleetDataService {
         this.errors = [];//when working with data feeds, they are usually prone to errors. there will be values that are not expected, even objects that are unexpected. As we get errors, they wil be dumped into the array
     };
 
+    getCarByLicense(license) {
+        return this.cars.find(car => {//.find loops thru the array(car is a parameter that becomes the index in the this.cars array) and finds the first element in the array that 
+            return car.license === license; //matches the parameter license. it will loop untill it matches
+        }) 
+    };
+
+    getCarsSortedByLicence() {
+        return this.cars.sort((car1, car2) => {
+            if(car1.license < car2.license) return -1;
+            if(car1.license > car2.license) return 1;
+            return 0;
+        });
+    };
+
     loadData(fleet) {
         for(let data of fleet) {//data becomes an instance of fleet. it inherits its properties. the for of loop loops thru all the indexes of the fleet array of objects,
             switch(data.type) {//if the type of each object in the fleet array: array > object > type >
